@@ -1,0 +1,27 @@
+[package]
+name = "learning-zed"
+version = "0.1.0"
+edition = "2021"
+
+# Workspace-style: each lesson is a binary in a subfolder.
+# We use [[example]] so `cargo run --example G1_hello_world` works for each.
+
+# --- G-series: real GPUI desktop apps (open a window) ------------------------
+[[example]]
+name = "G1_hello_world"
+path = "lessons/G1_hello_world/src/main.rs"
+
+[[example]]
+name = "G3_file_open"
+path = "lessons/G3_file_open/src/main.rs"
+
+[dependencies]
+# GPUI — Zed's UI framework. The published crate exposes `Application::new()`
+# + `Application::run()`. On Windows no extra features are needed.
+gpui = "0.2.2"
+
+[profile.release]
+# Match Zed's release profile a bit: thin LTO + strip keeps binaries small.
+lto = "thin"
+codegen-units = 1
+strip = "symbols"

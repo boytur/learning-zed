@@ -1,0 +1,22 @@
+# Learning Zed — Lesson Index
+
+Each folder is one lesson. Read them in order.
+
+## G1 — Hello World (make a window)
+**Concept:** The absolute minimum GPUI app.
+
+Everything starts with an `Application`. You create one with `Application::new()`,
+run it with `.run(|cx| ...)`, open a window with `cx.open_window(...)`, and give it
+a root view that implements the `Render` trait.
+
+**Real source:** `crates/gpui/examples/hello_world.rs`
+
+## G3 — Desktop file opening
+**Concept:** The desktop file workflow — native dialogs + direct filesystem access.
+
+This is the desktop version of `<input type="file">` + `fetch()`. The app opens a
+native OS dialog (`prompt_for_paths`), reads the file from disk (`std::fs`), saves
+to a new path (`prompt_for_new_path`), reveals it in Explorer (`reveal_path`), and
+opens it with the system (`open_with_system`).
+
+**Real source:** `crates/gpui/src/app.rs:1523`
