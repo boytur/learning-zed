@@ -22,6 +22,12 @@ opens it with the system (`open_with_system`).
 **Real source:** `crates/gpui/src/app.rs:1523`
 
 ## G5 — Resizable Premiere Pro Layout + UI
-**Concept:** Custom resizable layouts, split-pane dragging, cursor customization, and dark professional application design.
+**Concept:** Custom resizable layouts, split-pane dragging, cursor customization, modular code structures, scroll-bound containers, and asynchronous filesystem loading.
 
-We handle `on_mouse_down` on subtle divider borders to set drag-active states, track global movement with `on_mouse_move` and `on_mouse_up` on the root container, and update panel ratios reactively. This enables building custom multi-split layouts like Adobe Premiere Pro.
+We handle `on_mouse_down` on subtle divider borders to set drag-active states, track global movement with `on_mouse_move` and `on_mouse_up` on the root container, and update panel ratios reactively. 
+
+This lesson also demonstrates how to:
+- Modularize large Views into separate files using shared `impl View` blocks.
+- Perform asynchronous directory scans on a background thread using GPUI's background executor to avoid blocking the main UI thread.
+- Enable vertical scrolling on layout boundaries by defining unique component IDs and overflow configurations.
+- Detect OS-specific mounts (Windows drive letters vs Mac `/Volumes`).
