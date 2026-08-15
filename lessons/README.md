@@ -20,3 +20,8 @@ to a new path (`prompt_for_new_path`), reveals it in Explorer (`reveal_path`), a
 opens it with the system (`open_with_system`).
 
 **Real source:** `crates/gpui/src/app.rs:1523`
+
+## G5 — Resizable Premiere Pro Layout + UI
+**Concept:** Custom resizable layouts, split-pane dragging, cursor customization, and dark professional application design.
+
+We handle `on_mouse_down` on subtle divider borders to set drag-active states, track global movement with `on_mouse_move` and `on_mouse_up` on the root container, and update panel ratios reactively. This enables building custom multi-split layouts like Adobe Premiere Pro.

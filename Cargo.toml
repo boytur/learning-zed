@@ -15,6 +15,14 @@ path = "lessons/G1_hello_world/src/main.rs"
 name = "G3_file_open"
 path = "lessons/G3_file_open/src/main.rs"
 
+[[example]]
+name = "G4_drag_drop"
+path = "lessons/G4_drag_drop/src/main.rs"
+
+[[example]]
+name = "G5_resizable_layout"
+path = "lessons/G5_resizable_layout/src/main.rs"
+
 [dependencies]
 # GPUI — Zed's UI framework. The published crate exposes `Application::new()`
 # + `Application::run()`. On Windows no extra features are needed.
